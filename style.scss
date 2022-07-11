@@ -1,0 +1,31 @@
+* {
+  font-size: 14px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  > .element-1 {
+    > input {
+      width: 20rem;
+      height: 4rem;
+    }
+  }
+  > .element-2 {
+    > button {
+      width: 20rem;
+      height: 3rem;
+      > p {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
