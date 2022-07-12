@@ -6,37 +6,34 @@ let numbers = document.querySelector("input");
 const element1 = document.querySelector('.element-1');
 const element2 = document.querySelector('.element-2');
 
-search.addEventListener('click', searchNumber);
+search.addEventListener('click', findOutlier);
 
-function searchNumber() {
-    let numbersValue = numbers.value;
+function findOutlier() {
     let array = [];
-    array = numbersValue.replaceAll(',', ', ');
-    console.log(array); 
+    array = numbers.value.split(', ').join('');
+    console.log(array);
     element1.style.display = "none";
     element2.style.display = "none";
+    let evens = [];
+    let odds = [];
 
-    var evens = [];
-    var odds = [];
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] % 2) {
+     for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 0) {
             evens.push(array[i]);
         } else {
             odds.push(array[i]);
         }
+        
     }
-    let elen = evens.length;
-    let olen = odds.length;
-
-    if (elen > olen) {
+    console.log(evens);
+    console.log(odds);
+    if (odds.length > evens.length) {
         let documentEvens = document.createTextNode(evens);
        document.body.appendChild(documentEvens);
        
     } else {
         let documentOdds = document.createTextNode(odds);
         document.body.appendChild(documentOdds);
-    }
-
-    //let number = document.createTextNode(theNumber);
-
+    } 
 }
+
